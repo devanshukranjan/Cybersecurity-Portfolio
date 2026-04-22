@@ -38,6 +38,10 @@ The goal of this project was to understand how denial-of-service traffic appears
 
 ## Evidence
 
+### Downloadable Report
+
+- [Download the lab PDF](reports/dos-attack-simulation.pdf)
+
 ### Lab Setup
 
 ![Network setup](screenshots/01-network-setup.png)
