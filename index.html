@@ -1,0 +1,2180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devanshu Kumar Ranjan | Cybersecurity Analyst Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio focused on threat detection, network analysis, digital forensics, secure data systems, and applied AI security research.">
+  <meta name="author" content="Devanshu Kumar Ranjan">
+  <meta property="og:title" content="Devanshu Kumar Ranjan | Cybersecurity Analyst Portfolio">
+  <meta property="og:description" content="Projects, writeups, and experience focused on threat detection, digital forensics, and security operations work.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b1016">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1016;
+      --panel: #101822;
+      --panel-2: #15202d;
+      --panel-3: #192331;
+      --line: #263445;
+      --line-strong: #35485d;
+      --text: #f3f7fb;
+      --muted: #aab7c4;
+      --soft: #7d8d9c;
+      --cyan: #6fd3ff;
+      --green: #7ee787;
+      --amber: #f4c95d;
+      --red: #ff8b8b;
+      --blue: #8ab4ff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .36);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(111, 211, 255, .10), transparent 26rem),
+        radial-gradient(circle at 82% 4%, rgba(126, 231, 135, .08), transparent 24rem),
+        linear-gradient(135deg, #080c12 0%, var(--bg) 48%, #0e141b 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 20;
+      padding: .7rem .9rem;
+      background: var(--cyan);
+      color: #061019;
+      border-radius: var(--radius);
+      font-weight: 700;
+      transition: top .15s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(122, 143, 166, .22);
+      background: rgba(11, 16, 22, .84);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-wrap {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(111, 211, 255, .42);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(111, 211, 255, .17), rgba(126, 231, 135, .10));
+      color: var(--cyan);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--text);
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .brand-role {
+      display: block;
+      color: var(--soft);
+      font-size: .84rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      border-radius: var(--radius);
+      padding: .58rem .75rem;
+      cursor: pointer;
+      font-weight: 650;
+      line-height: 1;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible,
+    .nav-link[aria-current="page"] {
+      color: var(--text);
+      border-color: rgba(111, 211, 255, .35);
+      background: rgba(111, 211, 255, .08);
+      outline: none;
+    }
+
+    main {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .page {
+      display: none;
+      padding: 4.6rem 0;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    #home.page {
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    .home-shell {
+      border: 1px solid rgba(122, 143, 166, .18);
+      border-radius: calc(var(--radius) + 6px);
+      background: rgba(12, 18, 25, .44);
+      overflow: hidden;
+    }
+
+    .home-intro,
+    .home-skills,
+    .home-cards {
+      padding: 2.2rem 2.4rem;
+    }
+
+    .home-intro {
+      display: grid;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(122, 143, 166, .18);
+    }
+
+    .home-intro-copy {
+      max-width: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      width: fit-content;
+      justify-self: start;
+      color: var(--green);
+      background: rgba(126, 231, 135, .10);
+      border: 1px solid rgba(126, 231, 135, .28);
+      border-radius: 999px;
+      padding: .35rem .7rem;
+      font-size: .86rem;
+      font-weight: 750;
+    }
+
+    .pulse {
+      width: .55rem;
+      height: .55rem;
+      border-radius: 99px;
+      background: var(--green);
+      box-shadow: 0 0 0 .35rem rgba(126, 231, 135, .12);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      font-size: clamp(2.05rem, 3vw, 2.95rem);
+      line-height: .96;
+      letter-spacing: -.02em;
+    }
+
+    h2 {
+      margin-bottom: .85rem;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: .35rem;
+      font-size: 1.08rem;
+    }
+
+    .home-subtitle {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.2vw, 1.22rem);
+      max-width: none;
+      margin: .5rem 0 0;
+    }
+
+    .hero-actions,
+    .section-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: .15rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 44px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line-strong);
+      padding: .72rem 1rem;
+      font-weight: 760;
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+      border-color: rgba(111, 211, 255, .7);
+    }
+
+    .btn[aria-disabled="true"] {
+      cursor: not-allowed;
+      opacity: .62;
+    }
+
+    .btn[aria-disabled="true"]:hover {
+      transform: none;
+      border-color: var(--line-strong);
+    }
+
+    .btn-primary {
+      color: #061019;
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .home-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid rgba(122, 143, 166, .18);
+    }
+
+    .stat-card,
+    .info-card,
+    .project-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(16, 24, 34, .78);
+    }
+
+    .home-metric {
+      padding: 1.35rem 1.1rem 1.25rem;
+      text-align: center;
+      border-right: 1px solid rgba(122, 143, 166, .18);
+      background: rgba(255, 255, 255, .018);
+    }
+
+    .home-metric:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      display: block;
+      color: var(--text);
+      font-size: 1.7rem;
+      font-weight: 820;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--soft);
+      font-size: .9rem;
+      margin-top: .55rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-kicker {
+      color: var(--cyan);
+      margin-bottom: .35rem;
+      font-size: .82rem;
+      font-weight: 780;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-lede {
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    #about .section-lede {
+      max-width: none;
+    }
+
+    #about p,
+    #about li,
+    #projects p,
+    #projects li,
+    #detail p,
+    #detail li {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin: 1rem 0 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .34rem .72rem;
+      background: rgba(255, 255, 255, .03);
+      color: var(--muted);
+      font-weight: 690;
+    }
+
+    .chip.strong {
+      color: var(--cyan);
+      border-color: rgba(111, 211, 255, .36);
+      background: rgba(111, 211, 255, .08);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .info-card {
+      padding: 1.35rem;
+    }
+
+    .info-card small {
+      display: block;
+      margin-bottom: .6rem;
+      color: var(--soft);
+      font-weight: 720;
+      font-size: .95rem;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--text);
+      font-weight: 760;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .home-cards {
+      border-top: 1px solid rgba(122, 143, 166, .18);
+    }
+
+    .home-card-note {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      margin-top: 1rem;
+      padding: .35rem .78rem;
+      border-radius: 999px;
+      background: rgba(126, 231, 135, .12);
+      color: var(--green);
+      font-weight: 760;
+    }
+
+    .home-card-copy {
+      color: var(--muted);
+      margin-top: .75rem;
+      font-size: .96rem;
+      line-height: 1.55;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .filter-btn {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .03);
+      color: var(--muted);
+      padding: .45rem .85rem;
+      cursor: pointer;
+      font-weight: 720;
+    }
+
+    .filter-btn:hover,
+    .filter-btn:focus-visible,
+    .filter-btn[aria-pressed="true"] {
+      color: #061019;
+      background: var(--cyan);
+      border-color: var(--cyan);
+      outline: none;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      min-height: 0;
+      padding: 1rem;
+      text-align: left;
+      color: inherit;
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+
+    .project-card:hover,
+    .project-card:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(111, 211, 255, .55);
+      background: rgba(21, 32, 45, .95);
+      outline: none;
+    }
+
+    .project-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .8rem;
+    }
+
+    .category {
+      color: var(--cyan);
+      font-size: .77rem;
+      font-weight: 820;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .category.ai {
+      color: var(--cyan);
+    }
+
+    .category.siem {
+      color: var(--green);
+    }
+
+    .category.network {
+      color: var(--amber);
+    }
+
+    .category.forensic {
+      color: var(--blue);
+    }
+
+    .category.incident,
+    .category.ctf {
+      color: var(--red);
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .055);
+      color: var(--muted);
+      padding: .24rem .52rem;
+      font-size: .82rem;
+      font-weight: 650;
+    }
+
+    .detail-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .detail-main,
+    .detail-side {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(16, 24, 34, .78);
+    }
+
+    .detail-main {
+      padding: 1.2rem;
+    }
+
+    .detail-side {
+      padding: 1rem;
+      position: sticky;
+      top: 88px;
+    }
+
+    .back-button {
+      margin-bottom: 1rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 0;
+      cursor: pointer;
+      font-weight: 760;
+    }
+
+    .back-button:hover,
+    .back-button:focus-visible {
+      color: var(--cyan);
+      outline: none;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .meta {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .28rem .62rem;
+      color: var(--muted);
+      font-weight: 680;
+      font-size: .88rem;
+    }
+
+    .detail-section {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    .detail-section p,
+    .detail-section li {
+      color: var(--muted);
+    }
+
+    .detail-section ol,
+    .detail-section ul {
+      padding-left: 1.3rem;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .8rem;
+    }
+
+    .screenshot {
+      min-height: 160px;
+      border: 1px solid rgba(122, 143, 166, .20);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(90deg, rgba(111, 211, 255, .10) 1px, transparent 1px),
+        linear-gradient(rgba(111, 211, 255, .08) 1px, transparent 1px),
+        #080d13;
+      background-size: 22px 22px;
+      padding: .85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .screenshot.has-image {
+      padding: 0;
+      background: #080d13;
+      cursor: zoom-in;
+      transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .screenshot.has-image:hover,
+    .screenshot.has-image:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(111, 211, 255, .38);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, .28);
+      outline: none;
+    }
+
+    .screenshot img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(122, 143, 166, .20);
+      background: #05080c;
+    }
+
+    .screenshot-copy {
+      display: grid;
+      gap: .35rem;
+      padding: .85rem;
+    }
+
+    .screenshot-title {
+      color: var(--text);
+      font-weight: 760;
+    }
+
+    .screenshot-caption {
+      color: var(--soft);
+      font-size: .9rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      background: rgba(5, 9, 13, .82);
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-panel {
+      width: min(100%, 1180px);
+      max-height: min(92vh, 980px);
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      border: 1px solid rgba(111, 211, 255, .22);
+      border-radius: calc(var(--radius) + 4px);
+      background: rgba(9, 14, 20, .96);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, .42);
+      overflow: hidden;
+    }
+
+    .lightbox-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1rem .85rem;
+      border-bottom: 1px solid rgba(122, 143, 166, .18);
+    }
+
+    .lightbox-copy {
+      min-width: 0;
+    }
+
+    .lightbox-title {
+      display: block;
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 760;
+    }
+
+    .lightbox-caption {
+      display: block;
+      margin-top: .3rem;
+      color: var(--soft);
+      font-size: .94rem;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .lightbox-btn,
+    .lightbox-close {
+      min-width: 44px;
+      min-height: 44px;
+      border: 1px solid rgba(122, 143, 166, .22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .04);
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 760;
+    }
+
+    .lightbox-btn:hover,
+    .lightbox-btn:focus-visible,
+    .lightbox-close:hover,
+    .lightbox-close:focus-visible {
+      border-color: rgba(111, 211, 255, .38);
+      background: rgba(111, 211, 255, .08);
+      outline: none;
+    }
+
+    .lightbox-zoom {
+      min-width: 68px;
+      text-align: center;
+      color: var(--soft);
+      font-weight: 700;
+    }
+
+    .lightbox-stage {
+      overflow: auto;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at top, rgba(111, 211, 255, .08), transparent 24rem),
+        #060a0f;
+    }
+
+    .lightbox-image-wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: none;
+      border-radius: var(--radius);
+      border: 1px solid rgba(122, 143, 166, .16);
+      background: #05080c;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .36);
+      transition: width .12s ease;
+    }
+
+    .side-block + .side-block {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .side-label {
+      margin-bottom: .65rem;
+      color: var(--soft);
+      font-size: .78rem;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .side-list {
+      display: grid;
+      gap: .45rem;
+    }
+
+    .side-item {
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .045);
+      color: var(--muted);
+      padding: .55rem .65rem;
+      font-weight: 680;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .about-card,
+    .contact-card {
+      padding: 1.1rem;
+    }
+
+    .about-card {
+      border: 1px solid rgba(122, 143, 166, .18);
+      border-radius: calc(var(--radius) + 2px);
+      background: rgba(255, 255, 255, .025);
+    }
+
+    .about-card ul {
+      margin: .85rem 0 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    .about-card a {
+      color: var(--cyan);
+    }
+
+    .about-card a:hover,
+    .about-card a:focus-visible {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .education-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .education-list li {
+      padding: 1rem 1rem;
+      border: 1px solid rgba(122, 143, 166, .14);
+      border-radius: calc(var(--radius) - 2px);
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .education-list li + li {
+      margin-top: 1rem;
+    }
+
+    .edu-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .edu-row + .edu-row {
+      margin-top: .18rem;
+    }
+
+    .edu-institute,
+    .edu-degree,
+    .edu-score,
+    .edu-duration {
+      display: block;
+    }
+
+    .edu-institute {
+      color: var(--text);
+      font-weight: 720;
+    }
+
+    .edu-degree {
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .edu-score {
+      color: var(--cyan);
+      font-weight: 680;
+    }
+
+    .edu-duration {
+      color: var(--green);
+      font-size: .95rem;
+      text-align: right;
+    }
+
+    .experience-entry {
+      margin-top: .85rem;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(122, 143, 166, .14);
+      border-radius: calc(var(--radius) - 2px);
+      background:
+        linear-gradient(180deg, rgba(111, 211, 255, .05), rgba(255, 255, 255, .02)),
+        rgba(255, 255, 255, .02);
+    }
+
+    .exp-company-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .8rem;
+      margin-bottom: .18rem;
+    }
+
+    .exp-company {
+      color: var(--text);
+      font-weight: 760;
+      line-height: 1.25;
+      margin-bottom: 0;
+    }
+
+    .exp-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      border: 1px solid rgba(111, 211, 255, .24);
+      background: rgba(111, 211, 255, .08);
+      color: var(--cyan);
+      transition: border-color .15s ease, background .15s ease, transform .15s ease;
+    }
+
+    .exp-link:hover,
+    .exp-link:focus-visible {
+      border-color: rgba(111, 211, 255, .42);
+      background: rgba(111, 211, 255, .15);
+      transform: translateY(-1px);
+      text-decoration: none;
+      outline: none;
+    }
+
+    .exp-link svg {
+      width: .95rem;
+      height: .95rem;
+      fill: currentColor;
+    }
+
+    .exp-role-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .exp-role {
+      color: var(--cyan);
+      font-weight: 690;
+    }
+
+    .exp-duration {
+      color: var(--green);
+      font-weight: 680;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .experience-list {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .experience-list li + li {
+      margin-top: .42rem;
+    }
+
+    .cert-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .cert-list li + li {
+      margin-top: .75rem;
+    }
+
+    .cert-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .cert-date {
+      color: var(--green);
+      font-size: .95rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .contact-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-type {
+      color: var(--soft);
+      font-weight: 760;
+    }
+
+    .contact-value {
+      color: var(--cyan);
+      font-weight: 780;
+      overflow-wrap: anywhere;
+      text-align: right;
+    }
+
+    .footer {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+      color: var(--soft);
+      border-top: 1px solid rgba(122, 143, 166, .16);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 920px) {
+      .detail-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-side {
+        position: static;
+      }
+
+      .stats-grid,
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-points {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-wrap {
+        min-height: auto;
+        padding: .9rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: stretch;
+      }
+
+      .nav-link {
+        flex: 1 1 auto;
+      }
+
+      .page {
+        padding: 2.5rem 0;
+      }
+
+      .project-grid,
+      .about-grid,
+      .contact-grid,
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-intro,
+      .home-skills,
+      .home-cards {
+        padding: 1.6rem 1.2rem;
+      }
+
+      .exp-role-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .exp-company-row {
+        align-items: flex-start;
+      }
+
+      .cert-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .exp-duration {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .contact-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .contact-value {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 520px) {
+      main,
+      .footer,
+      .nav-wrap {
+        width: min(100% - 1rem, var(--max));
+      }
+
+      .brand-role {
+        display: none;
+      }
+
+      .stats-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .home-metric {
+        border-right: none;
+        border-bottom: 1px solid rgba(122, 143, 166, .18);
+      }
+
+      .home-metric:last-child {
+        border-bottom: none;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Primary navigation">
+      <a class="brand" href="#home" data-nav="home" aria-label="Devanshu Kumar Ranjan home">
+        <span class="brand-mark" aria-hidden="true">DK</span>
+          <span>
+            <span class="brand-name">Devanshu Kumar Ranjan</span>
+            <span class="brand-role">Cybersecurity Analyst | M.Tech Cyber Security Student</span>
+          </span>
+        </a>
+      <div class="nav-links">
+        <button class="nav-link" type="button" data-nav="home">Home</button>
+        <button class="nav-link" type="button" data-nav="projects">Projects</button>
+        <button class="nav-link" type="button" data-nav="about">About</button>
+        <button class="nav-link" type="button" data-nav="contact">Contact</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page active" id="home" aria-labelledby="home-title">
+      <div class="home-shell">
+        <div class="home-intro">
+          <div class="eyebrow"><span class="pulse" aria-hidden="true"></span>AI Research Intern | Open to work</div>
+          <div class="home-intro-copy">
+            <h1 id="home-title">Cybersecurity Analyst</h1>
+            <p class="home-subtitle">Specialising in threat detection, digital forensics, network analysis, and applied AI security work.</p>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary" type="button" data-nav="projects">View projects</button>
+            <button class="btn btn-secondary" type="button" data-nav="contact">Contact me</button>
+          </div>
+        </div>
+
+        <div class="home-metrics" aria-label="Portfolio highlights">
+          <div class="home-metric"><span class="stat-number">5</span><span class="stat-label">Projects</span></div>
+          <div class="home-metric"><span class="stat-number">1</span><span class="stat-label">Current internship</span></div>
+          <div class="home-metric"><span class="stat-number">4</span><span class="stat-label">Certifications</span></div>
+          <div class="home-metric"><span class="stat-number">8.84</span><span class="stat-label">M.Tech CGPA</span></div>
+        </div>
+
+        <div class="home-skills" aria-labelledby="skills-title">
+          <div class="section-kicker">Core Skills</div>
+          <h2 id="skills-title" style="display:none;">Core Skills</h2>
+          <div class="skills">
+            <span class="chip strong">Python</span>
+            <span class="chip strong">Wireshark</span>
+            <span class="chip strong">Autopsy</span>
+            <span class="chip strong">FTK Imager</span>
+            <span class="chip strong">Splunk</span>
+            <span class="chip strong">PostgreSQL</span>
+            <span class="chip">Threat detection</span>
+            <span class="chip">Digital forensics</span>
+            <span class="chip">Kali Linux</span>
+            <span class="chip">Nmap</span>
+            <span class="chip">hping3</span>
+            <span class="chip">SQL</span>
+            <span class="chip">C++</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">pgvector</span>
+            <span class="chip">VirtualBox</span>
+          </div>
+        </div>
+
+        <div class="home-cards">
+          <div class="info-grid">
+            <div class="info-card">
+              <small>Certification</small>
+              <p>Google Cybersecurity (Coursera)</p>
+              <div class="home-card-note">Completed</div>
+            </div>
+            <div class="info-card">
+              <small>Experience</small>
+              <p>AI Research Intern at KAS Global Commerce</p>
+              <div class="home-card-copy">Built AI-powered systems for listing generation, category mapping, and secure marketplace data pipelines using MongoDB, PostgreSQL, and pgvector.</div>
+            </div>
+            <div class="info-card">
+              <small>Research</small>
+              <p>Privacy-preserving federated learning</p>
+              <div class="home-card-copy">Current work focused on data confidentiality, enterprise IP protection, and secure collaborative learning workflows.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" style="display:none;">Projects</h2>
+      <div class="filters" id="filters" aria-label="Project filters"></div>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <section class="page" id="detail" aria-labelledby="detail-title">
+      <button class="back-button" type="button" data-nav="projects">&lt; Back to projects</button>
+      <div class="detail-layout">
+        <article class="detail-main">
+          <div class="category" id="detail-category"></div>
+          <h2 id="detail-title"></h2>
+          <p class="section-lede" id="detail-summary"></p>
+          <div class="meta-row" id="detail-meta"></div>
+
+          <section class="detail-section" aria-labelledby="objective-title">
+            <h3 id="objective-title">Objective</h3>
+            <p id="detail-objective"></p>
+          </section>
+
+          <section class="detail-section" aria-labelledby="process-title">
+            <h3 id="process-title">Process</h3>
+            <ol id="detail-process"></ol>
+          </section>
+
+          <section class="detail-section" aria-labelledby="screenshots-title">
+            <h3 id="screenshots-title">Evidence</h3>
+            <div class="screenshot-grid" id="detail-screenshots"></div>
+          </section>
+
+          <section class="detail-section" aria-labelledby="findings-title">
+            <h3 id="findings-title">Key findings</h3>
+            <ul id="detail-findings"></ul>
+          </section>
+
+          <section class="detail-section" aria-labelledby="learned-title">
+            <h3 id="learned-title">What I learned</h3>
+            <p id="detail-learned"></p>
+          </section>
+        </article>
+
+        <aside class="detail-side" aria-label="Project details">
+          <div class="side-block">
+            <div class="side-label">Tools used</div>
+            <div class="side-list" id="detail-tools"></div>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Skills demonstrated</div>
+            <div class="side-list" id="detail-skills"></div>
+          </div>
+          <div class="side-block">
+            <div class="side-label">Links</div>
+            <div class="side-list">
+              <a class="btn btn-secondary" id="detail-github" href="https://github.com/devanshukranjan" target="_blank" rel="noreferrer">Project repository</a>
+              <a class="btn btn-secondary" id="detail-report" href="" target="_blank" rel="noreferrer" aria-disabled="true">No report attached</a>
+              <a class="btn btn-secondary" id="detail-pdf" href="" target="_blank" rel="noreferrer" aria-disabled="true">No PDF attached</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page" id="about" aria-label="About">
+      <div class="section-kicker">About Me</div>
+      <p class="section-lede">M.Tech Cyber Security student at NIT Patna with hands-on experience in threat detection, network security analysis, and digital forensic investigation. Built AI-driven intrusion detection systems using ML/DL models trained on real-world datasets (UNSW-NB15, UGRansome 2024) and conducted SOC-oriented DoS traffic analysis using Wireshark, Kali Linux, and Nmap — mapping attack patterns to IDS/IPS detection signatures and SIEM-ready alert logic. Experienced in digital forensic workflows using Autopsy and FTK Imager, including incident documentation, evidence recovery, chain-of-custody reporting, and timeline reconstruction. Familiar with core security fundamentals including network defense (firewalls, IDS/IPS, VPNs), vulnerability assessment concepts, and the CIA triad. Completed the Google Cybersecurity Specialization and actively developing skills in SIEM-based log monitoring (Splunk). Also conducting M.Tech dissertation research in privacy-preserving federated learning, with applications to data confidentiality and enterprise IP protection. Seeking to contribute to security operations, incident response support, and risk management in a high-impact enterprise environment.</p>
+      <div class="about-grid">
+        <article class="about-card">
+          <h3>Education</h3>
+          <ul class="education-list">
+            <li>
+              <span class="edu-row">
+                <span class="edu-institute">NIT Patna</span>
+                <span class="edu-duration">August 2024 to May 2026</span>
+              </span>
+              <span class="edu-row">
+                <span class="edu-degree">M.Tech, Cyber Security (CSE)</span>
+                <span class="edu-score">CGPA 8.84/10</span>
+              </span>
+            </li>
+            <li>
+              <span class="edu-row">
+                <span class="edu-institute">Graphic Era University</span>
+                <span class="edu-duration">June 2019 to June 2023</span>
+              </span>
+              <span class="edu-row">
+                <span class="edu-degree">B.Tech, Computer Science and Engineering</span>
+                <span class="edu-score">CGPA 8.83/10</span>
+              </span>
+            </li>
+            <li>
+              <span class="edu-row">
+                <span class="edu-institute">Sri Chaitanya Techno School (CBSE), Visakhapatnam, India</span>
+                <span class="edu-duration">2019</span>
+              </span>
+              <span class="edu-row">
+                <span class="edu-degree">Senior Secondary</span>
+                <span class="edu-score">80.6%</span>
+              </span>
+            </li>
+            <li>
+              <span class="edu-row">
+                <span class="edu-institute">Cambridge School (ICSE), Cuttack, Odisha</span>
+                <span class="edu-duration">2017</span>
+              </span>
+              <span class="edu-row">
+                <span class="edu-degree">Secondary</span>
+                <span class="edu-score">90.17%</span>
+              </span>
+            </li>
+          </ul>
+        </article>
+        <article class="about-card">
+          <h3>Experience</h3>
+          <div class="experience-entry">
+            <div class="exp-company-row">
+              <div class="exp-company">KAS Global Commerce Inc. (My Seller Central)</div>
+              <a class="exp-link" href="https://www.linkedin.com/company/my-seller-central/" target="_blank" rel="noreferrer" aria-label="Visit company LinkedIn profile" title="Visit company LinkedIn profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.94 8.5H3.56V20h3.38zm.22-3.69a1.96 1.96 0 1 0-3.92 0 1.96 1.96 0 0 0 3.92 0M20 13.14C20 9.9 18.27 8.4 15.95 8.4a3.87 3.87 0 0 0-3.48 1.92V8.5H9.09c.04 1.2 0 11.5 0 11.5h3.38v-6.42c0-.34.03-.68.13-.92.27-.67.88-1.37 1.9-1.37 1.34 0 1.88 1.03 1.88 2.55V20H20z"/>
+                </svg>
+              </a>
+            </div>
+            <div class="exp-role-row">
+              <div class="exp-role">AI Research Intern</div>
+              <div class="exp-duration">September 2025 to Present</div>
+            </div>
+            <ul class="experience-list">
+              <li>Engineered Walmart and Amazon marketplace data pipelines for category-wise extraction, structured storage, and analytics-ready datasets.</li>
+              <li>Developed taxonomy ETL and embedding pipelines using text embeddings, PostgreSQL, and pgvector for semantic cross-marketplace mapping.</li>
+              <li>Managed least-privilege access controls and role-based permissions across PostgreSQL and MongoDB systems handling sensitive marketplace data.</li>
+              <li>Designed AI insight pipelines to generate structured, category-specific outputs for seller intelligence and decision support for listing generation, optimization, grading, and chatbot-based query answering.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="about-card">
+          <h3>Certifications</h3>
+          <ul class="cert-list">
+            <li>
+              <span class="cert-row">
+                <a href="https://www.coursera.org/account/accomplishments/specialization/QQOKJ9WNIWB9" target="_blank" rel="noreferrer" aria-label="View Google Cybersecurity certificate on Coursera" title="View Google Cybersecurity certificate on Coursera">Google Cybersecurity (Coursera)</a>
+                <span class="cert-date">December 2024 to March 2025</span>
+              </span>
+            </li>
+            <li>
+              <span class="cert-row">
+                <a href="https://drive.google.com/file/d/1ofpmj-bLuC3EHXQGxpZV1dIxlXbkgEd6/view?usp=sharing" target="_blank" rel="noreferrer" aria-label="Open PDAC certificate file" title="Open PDAC certificate file">Certified Python Developer Associate (PDAC)</a>
+                <span class="cert-date">March 2024</span>
+              </span>
+            </li>
+            <li>
+              <span class="cert-row">
+                <a href="https://drive.google.com/file/d/1G3WGzaN9tsonASGrbLfKoXXj_7vUHSiA/view?usp=sharing" target="_blank" rel="noreferrer" aria-label="Open Data Science for Engineers certificate file" title="Open Data Science for Engineers certificate file">Data Science for Engineers (NPTEL)</a>
+                <span class="cert-date">January 2022 to March 2022</span>
+              </span>
+            </li>
+            <li>
+              <span class="cert-row">
+                <a href="https://drive.google.com/file/d/19hY_be_Ezg3w1nLbYdGw9-6Z1nsBYbDd/view?usp=sharing" target="_blank" rel="noreferrer" aria-label="Open Machine Learning certificate file" title="Open Machine Learning certificate file">Machine Learning (Teachnook)</a>
+                <span class="cert-date">February 2022 to March 2022</span>
+              </span>
+            </li>
+          </ul>
+        </article>
+        <article class="about-card">
+          <h3>Current focus</h3>
+          <ul>
+            <li>Privacy-preserving federated learning for data confidentiality and enterprise IP protection</li>
+            <li>Splunk log monitoring and SPL query practice</li>
+            <li>Threat detection, packet analysis, forensic reporting, and SOC support workflows</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="contact" aria-labelledby="contact-title">
+      <div class="section-kicker">Contact</div>
+      <h2 id="contact-title">Get in touch.</h2>
+      <p class="section-lede">Open to cybersecurity, SOC, and analyst opportunities, along with collaboration on security research and practical lab work.</p>
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:devanshukranjan@gmail.com" aria-label="Send email to Devanshu Kumar Ranjan" title="Send email to Devanshu Kumar Ranjan">
+          <span class="contact-type">Email</span>
+          <span class="contact-value">devanshukranjan@gmail.com</span>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/devanshu-kumar-ranjan-06399221b" target="_blank" rel="noreferrer" aria-label="Visit LinkedIn profile" title="Visit LinkedIn profile">
+          <span class="contact-type">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/devanshu-kumar-ranjan-06399221b</span>
+        </a>
+        <a class="contact-card" href="https://github.com/devanshukranjan" target="_blank" rel="noreferrer" aria-label="Visit GitHub profile" title="Visit GitHub profile">
+          <span class="contact-type">GitHub</span>
+          <span class="contact-value">github.com/devanshukranjan</span>
+        </a>
+        <div class="contact-card">
+          <span class="contact-type">Location</span>
+          <span class="contact-value">Patna, India</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <div class="lightbox-top">
+        <div class="lightbox-copy">
+          <span class="lightbox-title" id="lightbox-title"></span>
+          <span class="lightbox-caption" id="lightbox-caption"></span>
+        </div>
+        <div class="lightbox-actions">
+          <button class="lightbox-btn" type="button" id="lightbox-zoom-out" aria-label="Zoom out">-</button>
+          <span class="lightbox-zoom" id="lightbox-zoom-level">100%</span>
+          <button class="lightbox-btn" type="button" id="lightbox-zoom-in" aria-label="Zoom in">+</button>
+          <button class="lightbox-btn" type="button" id="lightbox-reset" aria-label="Reset zoom">Reset</button>
+          <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close image">Close</button>
+        </div>
+      </div>
+      <div class="lightbox-stage" id="lightbox-stage">
+        <div class="lightbox-image-wrap">
+          <img class="lightbox-image" id="lightbox-image" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Devanshu Kumar Ranjan - cybersecurity portfolio focused on threat detection, network analysis, digital forensics, and applied research.</p>
+  </footer>
+
+  <script>
+    const filters = [
+      "All",
+      "AI & Intrusion Detection",
+      "Network Analysis",
+      "Digital Forensics"
+    ];
+
+    const categoryRank = new Map(filters.map((filter, index) => [filter, index]));
+
+    const projects = [
+      {
+        id: "autonomous-ai-threat-engine",
+        title: "Hermes — AI-Powered Ransomware & Zero-Day Intrusion Detection System",
+        category: "AI & Intrusion Detection",
+        categoryClass: "ai",
+        summary: "A production-style AI-powered IDS that combines classical ML, a Tab2Image CNN, analyst workflow controls, and live monitoring to detect ransomware, zero-day, and benign traffic patterns.",
+        meta: ["98.6% accuracy", "1.4% false positives", "60,013 test samples"],
+        tags: ["Python", "IDS", "Tab2Image CNN"],
+        objective: "Build a portfolio-grade intrusion detection system that does more than classify traffic in a notebook: train multiple models, compare them on a large test set, and expose the best results through a GUI designed around analyst actions and live monitoring.",
+        process: [
+          "Merged ransomware and zero-day traffic from UGRansome with 51,000 benign samples extracted from UNSW-NB15 to produce a combined 200,043-row dataset.",
+          "Selected the top 10 features, trained multiple ML and DL models, and evaluated them on a 60,013-sample test split.",
+          "Implemented a Tab2Image pipeline that pads the 10-feature tabular sample into a 64 x 64 grayscale image for CNN inference.",
+          "Built the Hermes Tkinter dashboard with SHA-256 login, model cards, manual checks, live monitoring every 2 seconds, AI auto-blocking, analyst actions, history, export, and model statistics."
+        ],
+        screenshots: [
+          {
+            title: "Login screen",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/01-login-screen.png",
+            caption: "Hermes login flow backed by SHA-256 password hashes stored in users.json."
+          },
+          {
+            title: "Main dashboard",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/02-main-dashboard.png",
+            caption: "The primary Hermes analyst console with traffic checks, live log output, and control panels."
+          },
+          {
+            title: "Model cards",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/03-model-cards.png",
+            caption: "Model cards expose saved accuracy and false-positive metrics for each supported detector."
+          },
+          {
+            title: "Live monitoring",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/04-live-monitoring.png",
+            caption: "Live monitoring mode checks traffic every 2 seconds to simulate continuous analyst-facing detection."
+          },
+          {
+            title: "Detection alert",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/05-detection-alert.png",
+            caption: "Malicious detections are surfaced clearly so ransomware and zero-day activity can be acted on immediately."
+          },
+          {
+            title: "Analyst action panel",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/06-analyst-action-panel.png",
+            caption: "The analyst panel supports actions such as Mark as Safe, Block Source, and Tag as False Positive."
+          },
+          {
+            title: "Model statistics",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/07-model-statistics.png",
+            caption: "Saved runtime metrics are shown directly in the GUI for side-by-side model comparison."
+          },
+          {
+            title: "Feature importance",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/08-feature-importance.png",
+            caption: "Random Forest feature importance helps explain which selected traffic fields drive predictions."
+          },
+          {
+            title: "Export log",
+            src: "ai-intrusion-detection/hermes-ids/screenshots/09-export-log.png",
+            caption: "Hermes supports exporting detection history so analyst actions and outcomes can be preserved."
+          }
+        ],
+        findings: [
+          "RandomForestClassifier and ML_EnsembleNet both reached 0.986 accuracy with false-positive rates near 0.014 on the saved evaluation set.",
+          "The Tab2Image CNN reached 0.969 accuracy, which made it a strong experimental deep-learning component rather than a throwaway demo.",
+          "The project combines model benchmarking, dataset engineering, runtime artifacts, and analyst workflow into a single system instead of stopping at offline evaluation."
+        ],
+        learned: "Hermes became the strongest project in the portfolio because it demonstrates end-to-end ML security engineering: dataset construction, feature selection, model comparison, novel CNN experimentation, and a GUI that mirrors real analyst workflows.",
+        tools: ["Python", "Tkinter", "Scikit-learn", "TensorFlow/Keras", "XGBoost", "UNSW-NB15", "UGRansome 2024"],
+        skills: ["Intrusion detection", "Model comparison", "Dataset engineering", "SOC automation thinking", "GUI prototyping"],
+        github: "https://github.com/devanshukranjan/Cybersecurity-Portfolio/tree/main/ai-intrusion-detection/hermes-ids",
+        githubLabel: "GitHub repository",
+        report: "ai-intrusion-detection/hermes-ids/model-comparison.md",
+        reportLabel: "Model comparison",
+        pdf: "#"
+      },
+      {
+        id: "ids-ga-feature-selection",
+        title: "IoT Intrusion Detection System using Genetic Algorithm Feature Selection on Bot-IoT Dataset",
+        category: "AI & Intrusion Detection",
+        categoryClass: "ai",
+        summary: "Evolved smarter security - reduced 43 features to 22 using a custom Genetic Algorithm, then trained XGBoost to achieve perfect classification on 1,100,557 Bot-IoT test samples across 5 traffic categories.",
+        meta: ["3,668,522 records", "43 -> 22 features", "100% test accuracy"],
+        tags: ["Bot-IoT", "XGBoost", "Genetic Algorithm"],
+        objective: "Build an IoT-focused intrusion detection system that does more than train a classifier on all features by using a custom Genetic Algorithm to search for a smaller, stronger feature subset for multiclass attack detection.",
+        process: [
+          "Loaded the Bot-IoT 5% dataset, combined raw CSV files, removed target-leakage fields, encoded categorical columns, and standardized the feature space.",
+          "Represented each candidate subset as a 43-bit chromosome and used a custom Genetic Algorithm with population size 50, mutation rate 0.4, and early stopping after no improvement.",
+          "Scored each chromosome with a hybrid fitness function that combined correlation merit and G-Mean from an XGBoost classifier to handle both redundancy and severe class imbalance.",
+          "Saved the final 22-feature dataset and trained the XGBoost IDS model on a 70/30 split for evaluation across DDoS, DoS, Reconnaissance, Theft, and Normal traffic."
+        ],
+        screenshots: [
+          {
+            title: "GA convergence plot",
+            src: "ai-intrusion-detection/bot-iot-ga-ids/screenshots/01-ga-convergence-plot.png",
+            caption: "The convergence curve shows the Genetic Algorithm improving feature-subset fitness before early stopping, making the optimization process visible rather than implicit."
+          },
+          {
+            title: "Final confusion matrix",
+            src: "ai-intrusion-detection/bot-iot-ga-ids/screenshots/02-confusion-matrix.png",
+            caption: "The final confusion matrix shows a perfect diagonal on the saved test run, matching the reported 1.00 precision, recall, and F1-score across all 5 classes."
+          }
+        ],
+        findings: [
+          "The pipeline reduced the feature space from 43 input features to 22 selected features while preserving the saved notebook's perfect classification result.",
+          "The final test report shows 1.00 precision, recall, and F1-score for all 5 classes on 1,100,557 test records.",
+          "The saved report records GA early stopping after 21 generations, which shows the search converged well before the configured 100-generation limit."
+        ],
+        learned: "This project stands out because it treats feature selection as an optimization problem rather than a preprocessing checkbox. The strongest part is not only the XGBoost score, but the GA design itself: chromosome-based search, hybrid fitness, caching, crossover, mutation, and explicit handling of imbalance through G-Mean.",
+        tools: ["Python", "XGBoost", "Custom Genetic Algorithm", "Pandas", "Scikit-learn", "Matplotlib", "NumPy"],
+        skills: ["Feature selection", "Evolutionary optimization", "Multiclass intrusion detection", "Imbalanced classification", "Model evaluation"],
+        github: "https://github.com/devanshukranjan/Cybersecurity-Portfolio/tree/main/ai-intrusion-detection/bot-iot-ga-ids",
+        githubLabel: "GitHub repository",
+        report: "ai-intrusion-detection/bot-iot-ga-ids/README.md",
+        reportLabel: "Project writeup",
+        pdf: "ai-intrusion-detection/bot-iot-ga-ids/project-report.pdf",
+        pdfLabel: "Project report PDF"
+      },
+      {
+        id: "dos-attack-simulation",
+        title: "DoS Attack Simulation & Traffic Analysis on Metasploitable 2",
+        category: "Network Analysis",
+        categoryClass: "network",
+        summary: "Simulated 6 types of DoS attacks on a vulnerable VM and captured + analysed attack traffic patterns using Wireshark.",
+        meta: ["Packet capture", "Threat detection", "DoS traffic"],
+        tags: ["Wireshark", "hping3", "Metasploitable 2"],
+        objective: "Understand how common DoS traffic patterns appear in packet captures so they can be recognized during SOC monitoring, alert triage, and incident investigation.",
+        process: [
+          "Configured an isolated lab environment with a bridged network between Kali Linux and Metasploitable 2 VMs.",
+          "Executed Slowloris using the Nmap NSE script and a Perl implementation, then captured the HTTP partial request pattern.",
+          "Executed a TCP SYN flood and captured the half-open connection spike in Wireshark.",
+          "Executed a UDP flood and observed ICMP Destination Unreachable responses from the target.",
+          "Executed TCP FIN, TCP PUSH+ACK, and ICMP flood traffic against the vulnerable VM.",
+          "Analysed each attack's unique Wireshark signature and documented defensive detection indicators."
+        ],
+        screenshots: [
+          {
+            title: "Lab network setup",
+            src: "network-analysis/dos-attack-simulation/screenshots/01-network-setup.png",
+            caption: "Kali Linux and Metasploitable 2 configured in the same lab network."
+          },
+          {
+            title: "Slowloris with Nmap",
+            src: "network-analysis/dos-attack-simulation/screenshots/02-slowloris-nmap.png",
+            caption: "Nmap NSE Slowloris execution against the lab target."
+          },
+          {
+            title: "SYN flood terminal",
+            src: "network-analysis/dos-attack-simulation/screenshots/04-syn-flood-terminal.png",
+            caption: "hping3 command evidence for the TCP SYN flood simulation."
+          },
+          {
+            title: "SYN flood in Wireshark",
+            src: "network-analysis/dos-attack-simulation/screenshots/04-syn-flood-wireshark.png",
+            caption: "Packet capture showing repeated TCP SYN traffic."
+          },
+          {
+            title: "UDP flood in Wireshark",
+            src: "network-analysis/dos-attack-simulation/screenshots/05-udp-flood-wireshark.png",
+            caption: "UDP traffic and ICMP unreachable behavior visible in the capture."
+          },
+          {
+            title: "ICMP flood in Wireshark",
+            src: "network-analysis/dos-attack-simulation/screenshots/08-icmp-flood-wireshark.png",
+            caption: "Sustained ICMP Echo Request traffic toward the target VM."
+          }
+        ],
+        findings: [
+          "Slowloris showed repeated HTTP connection behavior intended to keep server-side connections open.",
+          "TCP SYN flood produced large volumes of SYN packets without normal handshake completion.",
+          "UDP flood produced UDP packets followed by ICMP Destination Unreachable responses when ports were closed.",
+          "TCP FIN flood showed abnormal FIN-flag traffic that did not match normal session teardown.",
+          "TCP PUSH+ACK flood showed repeated PSH/ACK behavior that could force immediate packet processing.",
+          "ICMP flood showed sustained Echo Request traffic capable of consuming bandwidth and host resources."
+        ],
+        learned: "This project helped me connect traffic-generation commands with packet-level evidence in Wireshark. The main lesson was that each DoS technique creates a different protocol signature, and documenting those signatures is what makes the lab useful for SOC-style detection work.",
+        tools: ["Kali Linux", "Metasploitable 2", "VirtualBox", "hping3", "Nmap NSE", "Slowloris Perl", "Wireshark"],
+        skills: ["Packet analysis", "Threat detection", "Traffic baselining", "Detection indicators", "Evidence documentation"],
+        github: "https://github.com/devanshukranjan/Cybersecurity-Portfolio/tree/main/network-analysis/dos-attack-simulation",
+        githubLabel: "GitHub repository",
+        report: "network-analysis/dos-attack-simulation/wireshark-analysis.md",
+        reportLabel: "Wireshark analysis",
+        pdf: "network-analysis/dos-attack-simulation/reports/dos-attack-simulation.pdf",
+        pdfLabel: "Download lab PDF"
+      },
+      {
+        id: "autopsy-disk-investigation",
+        title: "Disk Image Forensic Investigation using Autopsy",
+        category: "Digital Forensics",
+        categoryClass: "forensic",
+        summary: "Autopsy-based disk image investigation covering file analysis, keyword search, timeline reconstruction, and forensic report generation.",
+        meta: ["DFIR", "Autopsy", "Timeline analysis"],
+        tags: ["Autopsy", "Disk image", "Timeline"],
+        objective: "Investigate a disk image with Autopsy and reconstruct relevant activity using file analysis, keyword search results, and timeline evidence.",
+        process: [
+          "Prepared the lab environment and launched Autopsy on the analysis system.",
+          "Created a new case with case metadata, examiner details, and storage location.",
+          "Added the disk image as the evidence source for forensic analysis.",
+          "Reviewed the file system from the File Analysis tab, including file type, size, path, and timestamp metadata.",
+          "Used Keyword Search to narrow the investigation to files containing relevant terms.",
+          "Generated a timeline to reconstruct activity chronologically and exported forensic reports."
+        ],
+        screenshots: [
+          {
+            title: "Autopsy launch",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/01-autopsy-launch.png",
+            caption: "Autopsy launched in the lab environment for disk image analysis."
+          },
+          {
+            title: "New case creation",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/02-new-case-creation.png",
+            caption: "Case metadata entered before adding the evidence source."
+          },
+          {
+            title: "Disk image added",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/03-disk-image-added.png",
+            caption: "Disk image selected as the data source for forensic review."
+          },
+          {
+            title: "File analysis tab",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/04-file-analysis-tab.png",
+            caption: "File system artifacts reviewed by path, metadata, type, and timestamp."
+          },
+          {
+            title: "Keyword search results",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/05-keyword-search-results.png",
+            caption: "Keyword hits used to reduce the evidence set to relevant artifacts."
+          },
+          {
+            title: "Timeline view",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/06-timeline-view.png",
+            caption: "Timeline analysis used to reconstruct activity chronologically."
+          },
+          {
+            title: "Report generated",
+            src: "digital-forensics/autopsy-disk-investigation/screenshots/07-report-generated.png",
+            caption: "Report output generated for documentation and review."
+          }
+        ],
+        findings: [
+          "File Analysis provided a structured view of paths, types, sizes, and timestamps across the disk image.",
+          "Keyword Search reduced the evidence set to files containing investigator-defined terms.",
+          "Timeline Analysis helped reconstruct activity chronologically instead of treating artifacts as isolated findings.",
+          "Report generation preserved the file listing, keyword results, and timeline output for documentation."
+        ],
+        learned: "The timeline is the strongest DFIR element in this lab because it turns file metadata into a chronological activity narrative that can support incident reconstruction.",
+        tools: ["Autopsy", "Linux", "Disk image"],
+        skills: ["Digital forensics", "Timeline analysis", "Keyword search", "Evidence reporting"],
+        github: "https://github.com/devanshukranjan/Cybersecurity-Portfolio/tree/main/digital-forensics",
+        githubLabel: "GitHub repository",
+        report: "digital-forensics/autopsy-disk-investigation/findings-summary.md",
+        reportLabel: "Findings summary",
+        pdf: "digital-forensics/autopsy-disk-investigation/reports/autopsy-disk-investigation.pdf",
+        pdfLabel: "Download lab PDF"
+      },
+      {
+        id: "ftk-file-recovery",
+        title: "File Recovery & Evidence Analysis using FTK Imager",
+        category: "Digital Forensics",
+        categoryClass: "forensic",
+        summary: "FTK Imager investigation focused on deleted file recovery and PDF validation using hexadecimal file header and EOF marker analysis.",
+        meta: ["DFIR", "FTK Imager", "Hex signatures"],
+        tags: ["FTK Imager", "File recovery", "PDF signature"],
+        objective: "Use FTK Imager to analyze a disk image, recover deleted files, validate evidence with hex signatures, and document recovery status.",
+        process: [
+          "Installed Wine on Kali Linux to run FTK Imager in the lab environment.",
+          "Created a case in FTK Imager and imported the disk image for review.",
+          "Searched the evidence source for files and reviewed deleted or recoverable artifacts.",
+          "Performed a hexadecimal search for the PDF header 25 50 44 46.",
+          "Validated suspected PDFs by checking for the EOF marker 25 45 4F 46.",
+          "Documented recovered files, partial fragments, corrupt items, and generated an evidence report."
+        ],
+        screenshots: [
+          {
+            title: "FTK workspace created",
+            src: "digital-forensics/ftk-file-recovery/screenshots/01-ftk-case-created.png",
+            caption: "FTK Imager opened and prepared for evidence intake."
+          },
+          {
+            title: "Disk image imported",
+            src: "digital-forensics/ftk-file-recovery/screenshots/02-disk-image-imported.png",
+            caption: "Disk image loaded as an evidence source for file system review."
+          },
+          {
+            title: "PDF signature hex search",
+            src: "digital-forensics/ftk-file-recovery/screenshots/03-hex-search-pdf-signature.png",
+            caption: "Hexadecimal search for the PDF header 25 50 44 46."
+          },
+          {
+            title: "EOF marker validation",
+            src: "digital-forensics/ftk-file-recovery/screenshots/04-eof-marker-validation.png",
+            caption: "EOF marker 25 45 4F 46 confirmed near the end of the suspected PDF."
+          },
+          {
+            title: "Recycle bin file found",
+            src: "digital-forensics/ftk-file-recovery/screenshots/05-recycle-bin-file-found.png",
+            caption: "Recovered PDF artifact identified under the recycle bin path."
+          },
+          {
+            title: "Deleted file recovered",
+            src: "digital-forensics/ftk-file-recovery/screenshots/06-deleted-file-recovered.png",
+            caption: "Export confirmation after recovering evidence from the image."
+          },
+          {
+            title: "Report generated",
+            src: "digital-forensics/ftk-file-recovery/screenshots/07-report-generated.png",
+            caption: "File listing report output used to document evidence metadata."
+          }
+        ],
+        findings: [
+          "$RF84VMP.pdf in /root/$RECYCLEBIN/ contained both the PDF header 25 50 44 46 and EOF marker 25 45 4F 46.",
+          "Digital Artbook EN.pdf did not show the expected PDF signature or EOF marker and was assessed as corrupt or incomplete.",
+          "unknown.bin in unallocated space contained the PDF header but no EOF marker, making it a possible fragment.",
+          "The findings table separates valid, corrupt, and partial evidence based on forensic validation rather than filename alone."
+        ],
+        learned: "File recovery is stronger when it is backed by signature validation. A file extension can be misleading, but matching headers and EOF markers give a more defensible evidence assessment.",
+        tools: ["FTK Imager", "Kali Linux", "Wine", "Hex search"],
+        skills: ["Deleted file recovery", "Hex signature analysis", "Evidence validation", "Forensic reporting"],
+        github: "https://github.com/devanshukranjan/Cybersecurity-Portfolio/tree/main/digital-forensics",
+        githubLabel: "GitHub repository",
+        report: "digital-forensics/ftk-file-recovery/findings-table.md",
+        reportLabel: "Findings table",
+        pdf: "digital-forensics/ftk-file-recovery/reports/ftk-file-recovery.pdf",
+        pdfLabel: "Download lab PDF"
+      }
+    ];
+
+    const state = {
+      activeFilter: "All",
+      activePage: "home",
+      activeProject: projects[0].id,
+      lightboxOpen: false,
+      lightboxZoom: 1,
+      lightboxBaseWidth: 0
+    };
+
+    const pages = Array.from(document.querySelectorAll(".page"));
+    const navButtons = Array.from(document.querySelectorAll("[data-nav]"));
+    const filtersEl = document.getElementById("filters");
+    const projectGrid = document.getElementById("project-grid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxStage = document.getElementById("lightbox-stage");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxTitle = document.getElementById("lightbox-title");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxZoomLevel = document.getElementById("lightbox-zoom-level");
+    const lightboxZoomIn = document.getElementById("lightbox-zoom-in");
+    const lightboxZoomOut = document.getElementById("lightbox-zoom-out");
+    const lightboxReset = document.getElementById("lightbox-reset");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    function updateLightboxBaseSize() {
+      if (!lightboxImage.naturalWidth || !lightboxImage.naturalHeight) {
+        return;
+      }
+
+      const stageStyles = getComputedStyle(lightboxStage);
+      const stageWidth = lightboxStage.clientWidth - parseFloat(stageStyles.paddingLeft) - parseFloat(stageStyles.paddingRight);
+      const stageHeight = lightboxStage.clientHeight - parseFloat(stageStyles.paddingTop) - parseFloat(stageStyles.paddingBottom);
+      const widthScale = stageWidth / lightboxImage.naturalWidth;
+      const heightScale = stageHeight / lightboxImage.naturalHeight;
+      const fitScale = Math.min(widthScale, heightScale, 1);
+
+      state.lightboxBaseWidth = Math.max(320, Math.round(lightboxImage.naturalWidth * fitScale));
+      if (state.lightboxBaseWidth > lightboxImage.naturalWidth) {
+        state.lightboxBaseWidth = lightboxImage.naturalWidth;
+      }
+
+      setLightboxZoom(state.lightboxZoom);
+    }
+
+    function setPage(pageId, options = {}) {
+      const nextPage = pageId === "detail" ? "detail" : (document.getElementById(pageId) ? pageId : "home");
+      state.activePage = nextPage;
+
+      pages.forEach((page) => {
+        page.classList.toggle("active", page.id === nextPage);
+      });
+
+      navButtons.forEach((button) => {
+        const navTarget = button.getAttribute("data-nav");
+        const isCurrent = navTarget === nextPage || (nextPage === "detail" && navTarget === "projects");
+        if (button.classList.contains("nav-link")) {
+          button.setAttribute("aria-current", isCurrent ? "page" : "false");
+        }
+      });
+
+      if (!options.skipHash) {
+        const hash = nextPage === "detail" ? "#project-" + state.activeProject : "#" + nextPage;
+        history.replaceState(null, "", hash);
+      }
+
+      window.scrollTo({ top: 0, behavior: options.instant ? "auto" : "smooth" });
+    }
+
+    function renderFilters() {
+      filtersEl.innerHTML = filters.map((filter) => {
+        const pressed = filter === state.activeFilter ? "true" : "false";
+        return '<button class="filter-btn" type="button" aria-pressed="' + pressed + '" data-filter="' + filter + '">' + filter + '</button>';
+      }).join("");
+    }
+
+    function renderProjects() {
+      const visibleProjects = projects.filter((project) => {
+        return state.activeFilter === "All" || project.category === state.activeFilter;
+      }).sort((a, b) => {
+        const categoryDiff = (categoryRank.get(a.category) || 999) - (categoryRank.get(b.category) || 999);
+        if (categoryDiff !== 0) {
+          return categoryDiff;
+        }
+
+        return projects.indexOf(a) - projects.indexOf(b);
+      });
+
+      projectGrid.innerHTML = visibleProjects.map((project) => {
+        return [
+          '<article class="project-card" tabindex="0" role="button" data-project="' + project.id + '">',
+          '<span class="project-card-head">',
+          '<span class="category ' + project.categoryClass + '">' + project.category + '</span>',
+          '</span>',
+          '<span>',
+          '<h3>' + project.title + '</h3>',
+          '<p>' + project.summary + '</p>',
+          '</span>',
+          '<span class="tag-row">' + project.tags.map((tag) => '<span class="tag">' + tag + '</span>').join("") + '</span>',
+          '</article>'
+        ].join("");
+      }).join("");
+    }
+
+    function renderDetail(projectId) {
+      const project = projects.find((item) => item.id === projectId) || projects[0];
+      state.activeProject = project.id;
+
+      document.getElementById("detail-category").className = "category " + project.categoryClass;
+      document.getElementById("detail-category").textContent = project.category;
+      document.getElementById("detail-title").textContent = project.title;
+      document.getElementById("detail-summary").textContent = project.summary;
+      document.getElementById("detail-meta").innerHTML = project.meta.map((item) => '<span class="meta">' + item + '</span>').join("");
+      document.getElementById("detail-objective").textContent = project.objective;
+      document.getElementById("detail-process").innerHTML = project.process.map((item) => '<li>' + item + '</li>').join("");
+      document.getElementById("detail-findings").innerHTML = project.findings.map((item) => '<li>' + item + '</li>').join("");
+      document.getElementById("detail-learned").textContent = project.learned;
+      document.getElementById("detail-tools").innerHTML = project.tools.map((item) => '<span class="side-item">' + item + '</span>').join("");
+      document.getElementById("detail-skills").innerHTML = project.skills.map((item) => '<span class="side-item">' + item + '</span>').join("");
+      document.getElementById("detail-screenshots").innerHTML = project.screenshots.map((item) => {
+        if (typeof item === "string") {
+          return '<div class="screenshot"><span class="screenshot-title">' + item + '</span><span class="screenshot-caption">Supporting implementation details are available in the linked repository.</span></div>';
+        }
+
+        return [
+          '<div class="screenshot has-image" tabindex="0" role="button" aria-label="Open evidence image: ' + item.title + '" data-lightbox-src="' + item.src + '" data-lightbox-title="' + item.title + '" data-lightbox-caption="' + item.caption + '">',
+          '<img src="' + item.src + '" alt="' + item.title + '">',
+          '<span class="screenshot-copy">',
+          '<span class="screenshot-title">' + item.title + '</span>',
+          '<span class="screenshot-caption">' + item.caption + '</span>',
+          '</span>',
+          '</div>'
+        ].join("");
+      }).join("");
+      document.getElementById("detail-github").href = project.github;
+      document.getElementById("detail-github").textContent = project.githubLabel || "View on GitHub";
+      const reportLink = document.getElementById("detail-report");
+      const hasReport = project.report && project.report !== "#";
+      reportLink.href = hasReport ? project.report : "";
+      reportLink.textContent = hasReport ? (project.reportLabel || "Download report") : "No report attached";
+      reportLink.setAttribute("aria-disabled", hasReport ? "false" : "true");
+      const pdfLink = document.getElementById("detail-pdf");
+      const hasPdf = project.pdf && project.pdf !== "#";
+      pdfLink.href = hasPdf ? project.pdf : "";
+      pdfLink.textContent = hasPdf ? (project.pdfLabel || "Download PDF") : "No PDF attached";
+      pdfLink.setAttribute("aria-disabled", hasPdf ? "false" : "true");
+    }
+
+    function setLightboxZoom(zoom) {
+      const nextZoom = Math.min(6, Math.max(.5, zoom));
+      state.lightboxZoom = nextZoom;
+      if (state.lightboxBaseWidth > 0) {
+        lightboxImage.style.width = Math.round(state.lightboxBaseWidth * nextZoom) + "px";
+      }
+      lightboxZoomLevel.textContent = Math.round(nextZoom * 100) + "%";
+    }
+
+    function openLightbox(src, title, caption) {
+      state.lightboxOpen = true;
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+      lightboxImage.src = src;
+      lightboxImage.alt = title || "Evidence image";
+      lightboxTitle.textContent = title || "Evidence image";
+      lightboxCaption.textContent = caption || "";
+      lightboxStage.scrollTop = 0;
+      lightboxStage.scrollLeft = 0;
+      state.lightboxBaseWidth = 0;
+      setLightboxZoom(1);
+      document.body.style.overflow = "hidden";
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      state.lightboxOpen = false;
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      lightboxImage.style.width = "";
+      state.lightboxBaseWidth = 0;
+      document.body.style.overflow = "";
+    }
+
+    function applyHashRoute() {
+      const hash = window.location.hash.replace("#", "");
+
+      if (hash.startsWith("project-")) {
+        const projectId = hash.replace("project-", "");
+        renderDetail(projectId);
+        setPage("detail", { skipHash: true, instant: true });
+        return;
+      }
+
+      setPage(hash || "home", { skipHash: true, instant: true });
+    }
+
+    document.addEventListener("click", (event) => {
+      const lightboxTarget = event.target.closest("[data-lightbox-src]");
+      if (lightboxTarget) {
+        openLightbox(
+          lightboxTarget.getAttribute("data-lightbox-src"),
+          lightboxTarget.getAttribute("data-lightbox-title"),
+          lightboxTarget.getAttribute("data-lightbox-caption")
+        );
+        return;
+      }
+
+      const disabledTarget = event.target.closest('[aria-disabled="true"]');
+
+      if (disabledTarget) {
+        event.preventDefault();
+        return;
+      }
+
+      const navTarget = event.target.closest("[data-nav]");
+      if (navTarget) {
+        event.preventDefault();
+        setPage(navTarget.getAttribute("data-nav"));
+        return;
+      }
+
+      const filterTarget = event.target.closest("[data-filter]");
+      if (filterTarget) {
+        state.activeFilter = filterTarget.getAttribute("data-filter");
+        renderFilters();
+        renderProjects();
+        return;
+      }
+
+      const projectTarget = event.target.closest("[data-project]");
+      if (projectTarget) {
+        renderDetail(projectTarget.getAttribute("data-project"));
+        setPage("detail");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (state.lightboxOpen) {
+        if (event.key === "Escape") {
+          closeLightbox();
+          return;
+        }
+
+        if (event.key === "+" || event.key === "=") {
+          event.preventDefault();
+          setLightboxZoom(state.lightboxZoom + .25);
+          return;
+        }
+
+        if (event.key === "-") {
+          event.preventDefault();
+          setLightboxZoom(state.lightboxZoom - .25);
+          return;
+        }
+
+        if (event.key === "0") {
+          event.preventDefault();
+          setLightboxZoom(1);
+          return;
+        }
+      }
+
+      const screenshotTarget = event.target.closest("[data-lightbox-src]");
+      if (screenshotTarget && (event.key === "Enter" || event.key === " ")) {
+        event.preventDefault();
+        openLightbox(
+          screenshotTarget.getAttribute("data-lightbox-src"),
+          screenshotTarget.getAttribute("data-lightbox-title"),
+          screenshotTarget.getAttribute("data-lightbox-caption")
+        );
+        return;
+      }
+
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+
+      const projectTarget = event.target.closest("[data-project]");
+      if (!projectTarget) {
+        return;
+      }
+
+      event.preventDefault();
+      renderDetail(projectTarget.getAttribute("data-project"));
+      setPage("detail");
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    lightboxZoomIn.addEventListener("click", () => {
+      setLightboxZoom(state.lightboxZoom + .25);
+    });
+
+    lightboxZoomOut.addEventListener("click", () => {
+      setLightboxZoom(state.lightboxZoom - .25);
+    });
+
+    lightboxReset.addEventListener("click", () => {
+      setLightboxZoom(1);
+    });
+
+    lightboxClose.addEventListener("click", () => {
+      closeLightbox();
+    });
+
+    lightboxImage.addEventListener("load", () => {
+      updateLightboxBaseSize();
+    });
+
+    lightboxStage.addEventListener("wheel", (event) => {
+      if (!state.lightboxOpen || !(event.ctrlKey || event.metaKey)) {
+        return;
+      }
+
+      event.preventDefault();
+      setLightboxZoom(state.lightboxZoom + (event.deltaY < 0 ? .1 : -.1));
+    }, { passive: false });
+
+    window.addEventListener("resize", () => {
+      if (!state.lightboxOpen) {
+        return;
+      }
+
+      updateLightboxBaseSize();
+    });
+
+    window.addEventListener("hashchange", applyHashRoute);
+
+    renderFilters();
+    renderProjects();
+    renderDetail(state.activeProject);
+    applyHashRoute();
+  </script>
+</body>
+</html>
