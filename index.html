@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Devanshu Kumar Ranjan | Cybersecurity Analyst Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="description" content="Cybersecurity portfolio focused on threat detection, network analysis, digital forensics, secure data systems, and applied AI security research.">
   <meta name="author" content="Devanshu Kumar Ranjan">
   <meta property="og:title" content="Devanshu Kumar Ranjan | Cybersecurity Analyst Portfolio">
@@ -1330,8 +1331,7 @@
             <div class="side-label">Links</div>
             <div class="side-list">
               <a class="btn btn-secondary" id="detail-github" href="https://github.com/devanshukranjan" target="_blank" rel="noreferrer">Project repository</a>
-              <a class="btn btn-secondary" id="detail-report" href="" target="_blank" rel="noreferrer" aria-disabled="true">No report attached</a>
-              <a class="btn btn-secondary" id="detail-pdf" href="" target="_blank" rel="noreferrer" aria-disabled="true">No PDF attached</a>
+              <a class="btn btn-secondary" id="detail-pdf" target="_blank" rel="noreferrer" aria-disabled="true" tabindex="-1">No PDF attached</a>
             </div>
           </div>
         </aside>
@@ -1975,16 +1975,16 @@
       }).join("");
       document.getElementById("detail-github").href = project.github;
       document.getElementById("detail-github").textContent = project.githubLabel || "View on GitHub";
-      const reportLink = document.getElementById("detail-report");
-      const hasReport = project.report && project.report !== "#";
-      reportLink.href = hasReport ? project.report : "";
-      reportLink.textContent = hasReport ? (project.reportLabel || "Download report") : "No report attached";
-      reportLink.setAttribute("aria-disabled", hasReport ? "false" : "true");
       const pdfLink = document.getElementById("detail-pdf");
       const hasPdf = project.pdf && project.pdf !== "#";
-      pdfLink.href = hasPdf ? project.pdf : "";
       pdfLink.textContent = hasPdf ? (project.pdfLabel || "Download PDF") : "No PDF attached";
       pdfLink.setAttribute("aria-disabled", hasPdf ? "false" : "true");
+      pdfLink.tabIndex = hasPdf ? 0 : -1;
+      if (hasPdf) {
+        pdfLink.href = project.pdf;
+      } else {
+        pdfLink.removeAttribute("href");
+      }
     }
 
     function setLightboxZoom(zoom) {
