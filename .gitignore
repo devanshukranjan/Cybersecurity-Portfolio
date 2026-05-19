@@ -1,0 +1,5 @@
+# Local source document used to build the published Splunk lab PDF.
+/Splunk_SIEM_Lab_Writeup.docx
+
+# Temporary DOCX extraction scratch space.
+/.docx-extract-splunk/

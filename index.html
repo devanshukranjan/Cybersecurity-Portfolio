@@ -1226,7 +1226,7 @@
         </div>
 
         <div class="home-metrics" aria-label="Portfolio highlights">
-          <div class="home-metric"><span class="stat-number">5</span><span class="stat-label">Projects</span></div>
+          <div class="home-metric"><span class="stat-number">6</span><span class="stat-label">Projects</span></div>
           <div class="home-metric"><span class="stat-number">1</span><span class="stat-label">Current internship</span></div>
           <div class="home-metric"><span class="stat-number">4</span><span class="stat-label">Certifications</span></div>
           <div class="home-metric"><span class="stat-number">8.84</span><span class="stat-label">M.Tech CGPA</span></div>
@@ -1506,6 +1506,7 @@
     const filters = [
       "All",
       "AI & Intrusion Detection",
+      "SIEM",
       "Network Analysis",
       "Digital Forensics"
     ];
@@ -1630,6 +1631,81 @@
         reportLabel: "Project writeup",
         pdf: "ai-intrusion-detection/bot-iot-ga-ids/project-report.pdf",
         pdfLabel: "Project report PDF"
+      },
+      {
+        id: "splunk-siem-lab",
+        title: "Splunk SIEM Lab - Real Attack Detection & Security Monitoring",
+        category: "SIEM",
+        categoryClass: "siem",
+        summary: "Built a multi-VM Splunk SIEM lab, forwarded Linux and Apache logs with Splunk Universal Forwarder, simulated Hydra and Nikto attacks, and created SPL detections, alerts, and dashboards.",
+        meta: ["Splunk Enterprise", "620 failed SSH attempts", "Real-time alerting"],
+        tags: ["Splunk", "SPL", "Universal Forwarder"],
+        objective: "Create an end-to-end SOC-style monitoring lab that collects logs from a target web server, detects real attack activity in Splunk, and documents the detection workflow with evidence.",
+        process: [
+          "Deployed Splunk Enterprise on an Ubuntu SIEM server and enabled receiving on TCP port 9997.",
+          "Configured Splunk Universal Forwarder on an Ubuntu Apache web server to monitor authentication and Apache log sources.",
+          "Simulated SSH brute-force traffic with Hydra and web reconnaissance with Nikto from a Kali Linux attacker VM.",
+          "Built SPL searches for failed SSH logins, attacker IP ranking, Apache 404 spikes, and live event review.",
+          "Configured a real-time brute-force alert and created a security dashboard for failed logins, top attacker IPs, and web scan indicators."
+        ],
+        screenshots: [
+          {
+            title: "Splunk login",
+            src: "siem-investigations/splunk-siem-lab/screenshots/setup/01_splunk_web_ui_login.png",
+            caption: "Splunk Web UI available on the SIEM server for search, alerting, and dashboarding."
+          },
+          {
+            title: "Receiving port",
+            src: "siem-investigations/splunk-siem-lab/screenshots/setup/02_splunk_receiving_port_9997.png",
+            caption: "Splunk configured to receive Universal Forwarder events on TCP port 9997."
+          },
+          {
+            title: "Forwarded logs",
+            src: "siem-investigations/splunk-siem-lab/screenshots/setup/04_logs_appearing_in_splunk.png",
+            caption: "Authentication and Apache events appearing in Splunk from the target web server."
+          },
+          {
+            title: "Hydra brute force",
+            src: "siem-investigations/splunk-siem-lab/screenshots/attacks/05_hydra_brute_force_running.png",
+            caption: "Hydra generating repeated SSH login failures against the Ubuntu target."
+          },
+          {
+            title: "Nikto web scan",
+            src: "siem-investigations/splunk-siem-lab/screenshots/attacks/06_nikto_web_scan_running.png",
+            caption: "Nikto scanning the Apache service and producing web access log evidence."
+          },
+          {
+            title: "Failed SSH detection",
+            src: "siem-investigations/splunk-siem-lab/screenshots/detection/07_failed_ssh_logins_query.png",
+            caption: "SPL search grouping failed SSH login attempts by extracted source IP."
+          },
+          {
+            title: "Triggered alert",
+            src: "siem-investigations/splunk-siem-lab/screenshots/alerts/12_alert_triggered.png",
+            caption: "SSH brute-force alert triggered after the failed-login threshold was exceeded."
+          },
+          {
+            title: "Security dashboard",
+            src: "siem-investigations/splunk-siem-lab/screenshots/dashboard/16_complete_dashboard.png",
+            caption: "Final Splunk dashboard showing failed logins, attacker IPs, and 404 scan activity."
+          }
+        ],
+        findings: [
+          "Splunk successfully ingested authentication and Apache logs forwarded from the target web server.",
+          "The Hydra test produced 620 failed SSH login attempts from attacker IP 192.168.40.134.",
+          "Nikto activity was visible through Apache access logs and repeated 404 responses.",
+          "A real-time alert fired when the failed SSH login threshold was crossed.",
+          "The final dashboard consolidated brute-force and web scan indicators into a single monitoring view."
+        ],
+        learned: "The strongest part of this lab is the full detection loop: log onboarding, attack simulation, SPL analysis, alert validation, and dashboarding. It demonstrates practical SOC workflow rather than only tool installation.",
+        tools: ["Splunk Enterprise", "Splunk Universal Forwarder", "Ubuntu Server", "Kali Linux", "Apache2", "Hydra", "Nikto", "VMware Workstation"],
+        skills: ["SIEM deployment", "Log forwarding", "SPL querying", "Brute-force detection", "Web scan detection", "Alert tuning", "Dashboarding"],
+        github: "https://github.com/devanshukranjan/Cybersecurity-Portfolio/tree/main/siem-investigations/splunk-siem-lab",
+        githubLabel: "GitHub repository",
+        report: "siem-investigations/splunk-siem-lab/README.md",
+        reportLabel: "Lab README",
+        pdf: "siem-investigations/splunk-siem-lab/lab-writeup/Splunk_SIEM_Lab_Writeup.pdf",
+        pdfLabel: "Download lab PDF"
       },
       {
         id: "dos-attack-simulation",
